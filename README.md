@@ -2,7 +2,7 @@
 Analyzing Job Description Data using PySpark
 
 ## About the Dataset
-The dataset is called 'Job Descriptions' which I got from Kaggle and it talks about the types of jobs looking for specific qualifications being offered around the world.
+The dataset is called 'Job Descriptions' which I got from Kaggle and it talks about the types of jobs looking for specific qualifications being offered around the world from 2009 to 2023.
 
 ## Using .explain() to show the physical execution plan
 I ran the explain method on the df dataframe.
@@ -96,6 +96,14 @@ filtered_df2.show()
 .filter() does the lazy transformation, where it creates the recipe for the logical plan, whereas .show() triggers spark to to execute all prior transformations. Spark creates a plan to filter rows where salary > 65 and experience > 7.
 .show() → this is an action where Spark now executes the filter transformation, retrieves the filtered rows, and prints them to the console. One of the problems with this code is that the same action is carried out twice.
 
+## Key Findings from the data
+
+1) 100,856 of jobs have an average salary above $65,000 and an average experience less than 5 years.
+2) Most of the jobs look for PhD holders to hire.
+3) Among Software Engineer, Data Scientist, and Data Analyst job roles, Software Engineers job roles are more being offered followed by Data Analyst and Data Scientist job roles.
+4) The mean average salary of the jobs being offered is 82.5 dollars (in thousands) and average years of experience for these roles is almost 7 years.
+5) Most of these jobs are Part-time followed by Temporary and Full-time
+6) Ghana has offered the most number of Data Scientist jobs.
 
 
 
