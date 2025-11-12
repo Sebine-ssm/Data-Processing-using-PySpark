@@ -92,7 +92,10 @@ filtered_df2 = df.filter(
     (col("avg_experience") > 7)
 )
 filtered_df2.show()
-``` 
+```
+.filter() does the lazy transformation, where it creates the recipe for the logical plan, whereas .show() triggers spark to to execute all prior transformations. Spark creates a plan to filter rows where salary > 65 and experience > 7.
+.show() → this is an action where Spark now executes the filter transformation, retrieves the filtered rows, and prints them to the console. One of the problems with this code is that the same action is carried out twice.
+
 
 
 
